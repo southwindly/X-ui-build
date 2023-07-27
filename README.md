@@ -107,13 +107,11 @@ macOS版下载地址：[点此下载](http://www.hostbuf.com/downloads/finalshel
 目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.
 ### 更新 Acme 脚本
 升级 Acme.sh 到最新版本
-
-          ~/.acme.sh/acme.sh --upgrade
+     ~/.acme.sh/acme.sh --upgrade
           
 如果你不想手动升级, 可以开启自动升级:
-
-          ~/.acme.sh/acme.sh  --upgrade  --auto-upgrade
-          
+     ~/.acme.sh/acme.sh  --upgrade  --auto-upgrade
+     
 之后, acme.sh 就会自动保持更新了。
 
 
@@ -122,16 +120,16 @@ macOS版下载地址：[点此下载](http://www.hostbuf.com/downloads/finalshel
 
 # 问题处理：切换亚马逊云EC2至root账户登录
 
-# root登录服务器（切换 root登录）
-sudo -i
+## root登录服务器（切换 root登录）
+     sudo -i
 
-# 设置或修改密码
-passwd root
+## 设置或修改密码
+     passwd root
 
-# 用root去编辑ssh文件
-vim /etc/ssh/sshd_config
+## 用root去编辑ssh文件
+     vim /etc/ssh/sshd_config
 
-主要修改两个地方：
+## 主要修改两个地方：
 
 #PermitRootLogin 去掉注释值#后改成yes
 
