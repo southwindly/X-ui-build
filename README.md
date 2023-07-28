@@ -14,7 +14,7 @@
 
 点此进入>>[搭建X-UI视频教程](https://youtu.be/n5koU-pj094)
 
-## 准备工作
+### 一、准备工作
 
 - 1、已经解析的域名，Win+R输入CMD 回车：键入ping 空格输入你的域名，检查一下是否可以ping通
 - 2、一台境外VPS主流系统，例如：Debian/Ubuntu/CentOS
@@ -27,35 +27,35 @@ Windows版下载地址：[点此下载](http://www.hostbuf.com/downloads/finalsh
 
 macOS版下载地址：[点此下载](http://www.hostbuf.com/downloads/finalshell_install.pkg)
 
-## 安装更新运行环境
+### 二、安装更新运行环境
 
-## 安装 X-ui 面板
-## 一、申请 SSL 证书
+#### 安装 X-ui 面板
+#### 申请 SSL 证书
 下面环境的安装方式，大家根据自己的系统选择命令安装就好了。
-### 1、Debian/Ubuntu系统执行以下命令：
+#### 1、Debian/Ubuntu系统执行以下命令：
      
     apt update -y && apt install -y curl && apt install -y socat
      
-### 2、CentOS系统执行以下命令：
+#### 2、CentOS系统执行以下命令：
 
     yum update -y && yum update -y && yum install -y socat
     
-### 3、运行Acme脚本
+#### 3、运行Acme脚本
 
     curl https://get.acme.sh | sh
     
-### 4、申请证书及密钥
+#### 4、申请证书及密钥
 【将代码中注释的邮箱和域名，改为你自己的】
 
     ~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com
  ---------
     ~/.acme.sh/acme.sh  --issue -d 输入你的域名  --standalone
     
- ### 5、下载证书及密钥
+### 5、下载证书及密钥
  
     ~/.acme.sh/acme.sh --installcert -d 输入你的域名 --key-file /root/private.key --fullchain-file /root/cert.crt
     
-### 二、安装&升级x-ui面板一键脚本
+### 三、安装&升级x-ui面板一键脚本
 
     bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
     
@@ -114,28 +114,27 @@ macOS版下载地址：[点此下载](http://www.hostbuf.com/downloads/finalshel
      
 之后, acme.sh 就会自动保持更新了。
 
+--------
 
-
-
-
-# 问题处理：切换亚马逊云EC2至root账户登录
-
-## root登录服务器（切换 root登录）
+## 问题处理解决方法：
+### 切换亚马逊云EC2至root账户登录
+1、root登录服务器（切换 root登录）
      sudo -i
 
-## 设置或修改密码
+2、设置或修改密码
      passwd root
 
-## 用root去编辑ssh文件
+3、用root去编辑ssh文件
      vim /etc/ssh/sshd_config
 
-## 主要修改两个地方：
+4、主要修改两个地方：
 
-#PermitRootLogin 去掉注释值#后改成yes
+将#PermitRootLogin XXXXX去掉注释值后改成PermitRootLogin yes
 
-PasswordAuthentication no改成yes
+将PasswordAuthentication no改成PasswordAuthentication yes
 
-保存并退出命令是wq ， 首先按ESC进入Command模式，然后输入“:wq”，回车就可以保存并退出了
+
+5、保存并退出命令是wq ， 首先按ESC进入Command模式，然后输入“:wq”，回车就可以保存并退出了
 
 
 
