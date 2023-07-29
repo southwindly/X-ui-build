@@ -25,8 +25,8 @@
 
 ### 三、一键安装&升级x-ui面板脚本
     bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-
-
+-------- 
+    bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
 
 
 ### 注意事项
