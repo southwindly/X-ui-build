@@ -31,6 +31,8 @@
     bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
 --------
 
+##### mack-a大佬的八合一的一键脚本，这里只演示无域名的安装方式，因为这个也是VLESS-Vision-uTLS-REALITY的核心亮点
+    wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh" && chmod 700 /root/install.sh && /root/install.sh
 
 
 
